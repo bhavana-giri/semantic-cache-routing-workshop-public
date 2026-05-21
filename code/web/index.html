@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Support Semantic Cache Workshop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="help-header">
+      <div class="help-branding">
+        <div class="help-logo" aria-hidden="true">R</div>
+        <div>
+          <p class="brand-pill">Redis workshop</p>
+          <h1>Support Console</h1>
+          <p class="hero-text">
+            Ask a customer support question and compare how Redis semantic caching changes the response path.
+          </p>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <span class="hero-note" id="health-status">Checking services...</span>
+      </div>
+    </header>
+
+    <main class="help-layout">
+      <section class="chat-column">
+        <article class="card composer">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Customer Assist</p>
+            </div>
+          </div>
+
+          <form id="research-form" class="research-form">
+            <label class="input-label" for="research-question">Customer question</label>
+            <textarea
+              id="research-question"
+              name="question"
+              rows="5"
+              placeholder="Example: My order says delivered but I cannot find it. What should I do?"
+            ></textarea>
+            <div class="form-actions">
+              <button class="primary-button" id="submit-button" type="submit">Send</button>
+              <button class="ghost-button" id="clear-cache-button" type="button">Clear cache</button>
+            </div>
+            <span id="request-status" class="request-status">Ready for your first request.</span>
+          </form>
+
+          <div class="prompt-bank" id="prompt-bank"></div>
+        </article>
+
+        <article class="card answer-card">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Assistant reply</p>
+              <h2>Response</h2>
+            </div>
+            <span class="answer-meta" id="served-by">Not run yet</span>
+          </div>
+          <div class="chat-transcript">
+            <div class="assistant-bubble">
+              <div class="markdown-output" id="answer-output">
+                <p class="placeholder">The support response will appear here.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="info-rail">
+        <article class="card policy-card">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Live cache policy</p>
+              <h2>System metrics</h2>
+            </div>
+          </div>
+          <div class="metric-grid">
+            <article class="metric-card">
+              <span class="metric-value" id="cache-threshold">-</span>
+              <span class="metric-label">Distance threshold</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value" id="cache-ttl">-</span>
+              <span class="metric-label">TTL seconds</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value" id="cache-size">-</span>
+              <span class="metric-label">Cached entries</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value" id="router-threshold">-</span>
+              <span class="metric-label">Router threshold</span>
+            </article>
+          </div>
+          <dl class="details-list cache-details">
+            <div>
+              <dt>Matched prompt</dt>
+              <dd id="matched-question">-</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="card state-card">
+          <p class="section-kicker">Routing result</p>
+          <div class="state-banner" id="cache-banner">
+            <span class="state-pill neutral" id="cache-hit-pill">Waiting</span>
+            <p id="cache-message">Submit a question to inspect whether Redis or the support assistant served the answer.</p>
+          </div>
+          <dl class="details-list">
+            <div>
+              <dt>Selected route</dt>
+              <dd id="selected-tool">-</dd>
+            </div>
+            <div>
+              <dt>Selected model</dt>
+              <dd id="selected-model">-</dd>
+            </div>
+            <div>
+              <dt>Similarity</dt>
+              <dd id="similarity-score">-</dd>
+            </div>
+            <div>
+              <dt>Distance</dt>
+              <dd id="distance-score">-</dd>
+            </div>
+            <div>
+              <dt>Latency</dt>
+              <dd id="latency-score">-</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="card references-card">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">References</p>
+              <h2>FAQ evidence</h2>
+            </div>
+          </div>
+          <ul class="source-list" id="source-list">
+            <li class="placeholder">FAQ references will appear when the assistant uses them.</li>
+          </ul>
+        </article>
+      </aside>
+    </main>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

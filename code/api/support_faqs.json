@@ -1,0 +1,146 @@
+{
+  "dataset": "ecommerce_faq",
+  "version": "1.0",
+  "faqs": [
+    {
+      "id": "FAQ-001",
+      "category": "Orders",
+      "question": "How do I place an order?",
+      "answer": "Browse products, add items to your cart, and click checkout. Enter your shipping and payment details to complete the purchase.",
+      "tags": ["order", "checkout", "purchase"]
+    },
+    {
+      "id": "FAQ-002",
+      "category": "Orders",
+      "question": "Can I cancel my order after placing it?",
+      "answer": "Orders can be cancelled before they are shipped. Go to My Orders and select Cancel Order if the option is available.",
+      "tags": ["cancel", "order", "modify"]
+    },
+    {
+      "id": "FAQ-003",
+      "category": "Shipping",
+      "question": "How long does delivery take?",
+      "answer": "Standard delivery typically takes 3–7 business days depending on your location.",
+      "tags": ["shipping", "delivery", "timeline"]
+    },
+    {
+      "id": "FAQ-004",
+      "category": "Shipping",
+      "question": "Do you offer international shipping?",
+      "answer": "Yes, we ship to selected international locations. Shipping costs and delivery times vary by destination.",
+      "tags": ["international", "shipping"]
+    },
+    {
+      "id": "FAQ-005",
+      "category": "Shipping",
+      "question": "How can I track my order?",
+      "answer": "Once shipped, you will receive a tracking link via email and SMS. You can also track it under My Orders.",
+      "tags": ["tracking", "shipment"]
+    },
+    {
+      "id": "FAQ-006",
+      "category": "Payments",
+      "question": "What payment methods are accepted?",
+      "answer": "We accept credit cards, debit cards, UPI, net banking, wallets, and cash on delivery in eligible areas.",
+      "tags": ["payment", "methods"]
+    },
+    {
+      "id": "FAQ-007",
+      "category": "Payments",
+      "question": "Is online payment secure?",
+      "answer": "Yes, all transactions are encrypted using secure payment gateways compliant with industry standards.",
+      "tags": ["security", "payment"]
+    },
+    {
+      "id": "FAQ-008",
+      "category": "Returns",
+      "question": "What is your return policy?",
+      "answer": "Items can be returned within 7 days of delivery if unused and in original packaging.",
+      "tags": ["returns", "policy"]
+    },
+    {
+      "id": "FAQ-009",
+      "category": "Returns",
+      "question": "How do I initiate a return?",
+      "answer": "Go to My Orders, select the item, and choose Return Item. Follow the instructions for pickup or drop-off.",
+      "tags": ["return", "refund"]
+    },
+    {
+      "id": "FAQ-010",
+      "category": "Refunds",
+      "question": "When will I receive my refund?",
+      "answer": "Refunds are processed within 5–7 business days after the returned item passes quality inspection.",
+      "tags": ["refund", "timeline"]
+    },
+    {
+      "id": "FAQ-011",
+      "category": "Account",
+      "question": "How do I create an account?",
+      "answer": "Click Sign Up, enter your email or phone number, and verify using the OTP sent to you.",
+      "tags": ["account", "signup"]
+    },
+    {
+      "id": "FAQ-012",
+      "category": "Account",
+      "question": "I forgot my password. What should I do?",
+      "answer": "Click Forgot Password on the login page and follow the reset instructions sent to your email.",
+      "tags": ["password", "account"]
+    },
+    {
+      "id": "FAQ-013",
+      "category": "Product",
+      "question": "How do I check product availability?",
+      "answer": "Enter your delivery PIN code on the product page to see availability and delivery options.",
+      "tags": ["product", "availability"]
+    },
+    {
+      "id": "FAQ-014",
+      "category": "Product",
+      "question": "Are product images accurate?",
+      "answer": "We try to display products as accurately as possible, but slight variations may occur due to lighting or display settings.",
+      "tags": ["product", "images"]
+    },
+    {
+      "id": "FAQ-015",
+      "category": "Discounts",
+      "question": "How do I apply a coupon code?",
+      "answer": "Enter the coupon code during checkout in the Apply Coupon field before payment.",
+      "tags": ["coupon", "discount"]
+    },
+    {
+      "id": "FAQ-016",
+      "category": "Discounts",
+      "question": "Why is my coupon not working?",
+      "answer": "Coupons may fail due to expiration, minimum order value, or product exclusions.",
+      "tags": ["coupon", "error"]
+    },
+    {
+      "id": "FAQ-017",
+      "category": "Support",
+      "question": "How do I contact customer support?",
+      "answer": "You can reach us via live chat, email support, or the Help Center available on our website.",
+      "tags": ["support", "contact"]
+    },
+    {
+      "id": "FAQ-018",
+      "category": "Support",
+      "question": "What are customer support hours?",
+      "answer": "Customer support is available 24/7 through chat and email.",
+      "tags": ["support", "hours"]
+    },
+    {
+      "id": "FAQ-019",
+      "category": "Delivery Issues",
+      "question": "My order shows delivered but I did not receive it.",
+      "answer": "Please contact support within 48 hours so we can investigate with the delivery partner.",
+      "tags": ["delivery", "issue"]
+    },
+    {
+      "id": "FAQ-020",
+      "category": "Warranty",
+      "question": "Do products come with warranty?",
+      "answer": "Warranty coverage depends on the brand and product. Details are listed on the product page.",
+      "tags": ["warranty", "product"]
+    }
+  ]
+}

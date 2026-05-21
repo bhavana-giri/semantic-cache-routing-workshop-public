@@ -1,0 +1,6 @@
+{
+  // Follow system light/dark mode preference
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.preferredLightColorTheme": "Default Light Modern"
+}

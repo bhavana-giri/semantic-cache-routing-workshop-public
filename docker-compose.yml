@@ -1,0 +1,98 @@
+services:
+
+  # Workbench
+  workbench:
+    image: nginx:alpine
+    container_name: workshop-workbench
+    ports:
+      - "80:80"
+    volumes:
+      - ./workbench:/usr/share/nginx/html:ro
+      - ./workbench/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./workbench/proxy:/etc/nginx/proxy:ro
+    depends_on:
+      - api
+      - docs
+      - vscode
+      - web
+      - redisinsight
+
+  # Documentation server (Docsify)
+  docs:
+    image: nginx:alpine
+    container_name: workshop-docs
+    volumes:
+      - ./docs:/usr/share/nginx/html:ro
+
+  # VS Code in the browser (code-server)
+  # ─────────────────────────────────────────────────────────────────────────
+  # Security: code-server performs WebSocket origin checks (added in v4.10.1)
+  # to prevent cross-site WebSocket hijacking. In hosted lab environments:
+  #
+  # 1. The browser's Origin header can be the workbench proxy URL.
+  # 2. The Host header can be the VS Code proxy URL.
+  # 3. These don't match, so WebSockets are blocked (error 1006)
+  #
+  # Since hosted lab URLs are generated dynamically, we cannot predict them.
+  # Using --trusted-origins "*" allows all origins through the check.
+  # Keep this lab behind a trusted reverse proxy or private workshop network.
+  # ─────────────────────────────────────────────────────────────────────────
+  vscode:
+    image: codercom/code-server:latest
+    container_name: workshop-vscode
+    volumes:
+      - ./code:/home/coder/code
+      - vscode-data:/home/coder/.local/share/code-server
+    command: >-
+      --auth none
+      --bind-addr 0.0.0.0:8080
+      --disable-workspace-trust
+      --trusted-origins "*"
+      /home/coder/code
+
+  # Web terminal with Node.js
+  # restart: unless-stopped ensures the container restarts if someone types
+  # "exit" in the terminal, which would otherwise stop the tmux session
+  web:
+    build: ./docker/web
+    container_name: workshop-web
+    restart: unless-stopped
+    volumes:
+      - ./code/web:/app
+      - /app/node_modules
+
+  # Python API
+  api:
+    build:
+      context: .
+      dockerfile: ./docker/api/Dockerfile
+    container_name: workshop-api
+    env_file:
+      - ./code/api/.env
+    volumes:
+      - ./code/api:/app
+    depends_on:
+      - redis
+
+  # Redis
+  redis:
+    image: redis:latest
+    container_name: workshop-redis
+
+  # Redis Insight
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: workshop-redisinsight
+    environment:
+      - RI_PROXY_PATH=/redisinsight
+      - RI_REDIS_HOST=redis
+      - RI_REDIS_PORT=6379
+      - RI_REDIS_ALIAS=Workshop Redis
+    volumes:
+      - redisinsight-data:/data
+    depends_on:
+      - redis
+
+volumes:
+  vscode-data:
+  redisinsight-data:
